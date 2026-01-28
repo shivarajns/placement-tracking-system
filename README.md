@@ -4,7 +4,7 @@ UniPlace is a role-based placement and internship tracking platform that manages
 
 # UniPlace – Placement & Internship Platform
 
-UniPlace is a role-based placement and internship tracking platform designed for universities to manage placement workflows, company job postings, student applications, and analytics dashboards. Built using **Spring Boot**, **MySQL**, and **React**, UniPlace combines practical workflow management with backend engineering depth, making it both recruiter- and GATE-friendly.
+UniPlace is a role-based placement and internship tracking platform designed for universities to manage placement workflows, company job postings, student applications, and analytics dashboards. Built using **Spring Boot**, **MySQL**, and **React**, UniPlace demonstrates scalable backend engineering, secure role-based access, and practical workflow management.
 
 ---
 
@@ -62,3 +62,4 @@ UniPlace is a role-based placement and internship tracking platform designed for
 1. Clone the repository:
 ```bash
 git clone https://github.com/<your-username>/placement-tracking-system.git
+
