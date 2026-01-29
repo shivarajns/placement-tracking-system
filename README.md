@@ -48,18 +48,18 @@ UniPlace is a role-based placement and internship tracking platform designed for
 
 ---
 
-## Project Status
+## Project Structure
 
-🚧 Under active development  
-- Database schema completed ✅  
-- REST APIs in progress ⏳  
-- Frontend UI planned for React ⚡  
+frontend/
+├── public/                     
+├── src/
+│   ├── components/             
+│   ├── pages/                  
+│   ├── services/               
+│   ├── utils/                  
+│   ├── App.js                  
+│   └── index.js                
+├── package.json
+└── README.md
 
----
-
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/<your-username>/placement-tracking-system.git
 
