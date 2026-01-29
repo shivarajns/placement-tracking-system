@@ -1,10 +1,9 @@
-
-
+import Logo from "./components/common/Logo"; 
 
 function App() {
   return (
     <div className="App">
-      <h1>UniPlace – Placement & Internship Platform</h1>
+      <Logo/>
     </div>
   );
 }
