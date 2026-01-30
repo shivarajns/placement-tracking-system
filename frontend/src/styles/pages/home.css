@@ -1,0 +1,48 @@
+.HomePage{
+    max-width: 100vw;
+    height: auto;
+    /* background-color: #0A2540; */
+    color: white;
+    margin-top: 20px;
+    padding: 20px 0px 0px 0px;
+}
+
+.HomeCard{
+    width: 260px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 20px 10px;
+    padding-bottom: 35px;
+    color: rgb(46, 46, 46);
+    box-shadow: rgba(117, 117, 117, 0.673) 0px 5px 15px;
+}
+
+.heading{
+    text-align: center;
+}
+
+.points{
+    margin: 10px 0px 0px 15px;
+}
+
+.Home-Heading{
+    background-color: #0A2540;
+    text-align: center;
+    height: auto;
+    margin: 20px 0px 0px 0px;
+    padding: 15px 5px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.points-cntr{
+    color: black;
+    padding: 10px 5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+}
