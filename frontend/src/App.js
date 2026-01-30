@@ -1,9 +1,14 @@
-import Logo from "./components/common/Logo"; 
+import Logo from "./components/common/Logo";
+import Navbar from "./components/common/navbar";
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <Logo/>
+      <Navbar />
+      <div className="HomeLogo">
+        <Logo />
+      </div>
     </div>
   );
 }
