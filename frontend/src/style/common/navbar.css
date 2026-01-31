@@ -5,6 +5,7 @@ nav {
     padding: 15px 40px;
     background-color: #0f172a;
     color: white;
+    max-width: 100vw;
 }
 
 .nav-left h1 {

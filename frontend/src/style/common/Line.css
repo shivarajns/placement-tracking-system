@@ -1,0 +1,6 @@
+.Line{
+    max-width: 100vw;
+    height: 2px;
+    background-color: black;
+    margin: 0 8px;
+}
