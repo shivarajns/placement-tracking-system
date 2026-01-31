@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/placement-tracking-system/static/css/main.88bbb2e8.css",
-    "main.js": "/placement-tracking-system/static/js/main.c69dacf3.js",
-    "static/media/UniPlaceLogo.png": "/placement-tracking-system/static/media/UniPlaceLogo.b19357ee8a5ac83b3f63.png",
+    "main.css": "/placement-tracking-system/static/css/main.2f12e700.css",
+    "main.js": "/placement-tracking-system/static/js/main.9433c455.js",
     "index.html": "/placement-tracking-system/index.html",
-    "main.88bbb2e8.css.map": "/placement-tracking-system/static/css/main.88bbb2e8.css.map",
-    "main.c69dacf3.js.map": "/placement-tracking-system/static/js/main.c69dacf3.js.map"
+    "main.2f12e700.css.map": "/placement-tracking-system/static/css/main.2f12e700.css.map",
+    "main.9433c455.js.map": "/placement-tracking-system/static/js/main.9433c455.js.map"
   },
   "entrypoints": [
-    "static/css/main.88bbb2e8.css",
-    "static/js/main.c69dacf3.js"
+    "static/css/main.2f12e700.css",
+    "static/js/main.9433c455.js"
   ]
 }
