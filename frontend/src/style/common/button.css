@@ -1,0 +1,25 @@
+button{
+    padding: 12px 20px;
+    width: auto;
+    height: auto;
+    background-color: rgb(213, 225, 255);
+    color: black;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+button:hover{
+        background-color: rgb(143, 176, 254);
+}
+
+@media (min-width:320px) and (max-width:375px) {
+
+    button{
+        padding: 8px 8px;
+    }
+}

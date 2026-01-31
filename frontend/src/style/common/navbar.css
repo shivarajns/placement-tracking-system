@@ -1,0 +1,23 @@
+.navbar {
+    width: 100vw;
+    height: 80px;
+    background-color: rgb(0, 0, 60);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    padding: 0px 5px;
+}
+
+.nav-left {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+@media (min-width:320px) and (max-width:375px) {
+    .nav-left {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+}
