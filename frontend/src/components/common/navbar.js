@@ -1,19 +1,28 @@
-import React from "react";
-import "../../style/common/navbar.css"
-import Button from "./button";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../../style/common/navbar.css";
 
 function Navbar() {
-    return(
-        <div className="navbar">
+    const [open, setOpen] = useState(false);
+
+    return (
+        <nav>
             <div className="nav-left">
-                <p>UniPlace</p>
+                <h1>UniPlace</h1>
             </div>
 
-            <div className="nav-right">
-                <Button cont="Login/Signup" />
+            <div className={`nav-right ${open ? "open" : ""}`}>
+                <Link className="Link" to="/" onClick={() => setOpen(false)}>Home</Link>
+                <Link className="Link" to="/login" onClick={() => setOpen(false)}>Profile</Link>
             </div>
-        </div>
-    )
+
+            <div className="hamburger" onClick={() => setOpen(!open)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    );
 }
 
-export default Navbar
+export default Navbar;
