@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/placement-tracking-system/static/css/main.3d3aae03.css",
-    "main.js": "/placement-tracking-system/static/js/main.1805d7ea.js",
+    "main.js": "/placement-tracking-system/static/js/main.acbab199.js",
     "index.html": "/placement-tracking-system/index.html",
     "main.3d3aae03.css.map": "/placement-tracking-system/static/css/main.3d3aae03.css.map",
-    "main.1805d7ea.js.map": "/placement-tracking-system/static/js/main.1805d7ea.js.map"
+    "main.acbab199.js.map": "/placement-tracking-system/static/js/main.acbab199.js.map"
   },
   "entrypoints": [
     "static/css/main.3d3aae03.css",
-    "static/js/main.1805d7ea.js"
+    "static/js/main.acbab199.js"
   ]
 }
