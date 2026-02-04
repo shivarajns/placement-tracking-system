@@ -2,6 +2,9 @@ package com.uniplace.service.imp;
 
 
 import com.uniplace.dto.RegisterRequest;
+import com.uniplace.exception.AlreadyRegisteredException;
+import com.uniplace.exception.EmailAlreadyUsedException;
+import com.uniplace.exception.StudentNotEligibleException;
 import com.uniplace.model.AdminStudent;
 import com.uniplace.model.StudentProfile;
 import com.uniplace.model.User;
@@ -38,14 +41,14 @@ public class RegistrationServiceImpl implements RegistrationService {
                 request.getUsn(),
                 request.getInstituteId()
         ).orElseThrow(() ->
-                new RuntimeException("Student not eligible for registration"));
+                new StudentNotEligibleException("Student not eligible for registration"));
 
         if(adminStudent.getIsRegistered()){
-            throw new RuntimeException("Student already Registered");
+            throw new AlreadyRegisteredException("Student already Registered");
         }
 
         if(userRepository.existsByEmail(request.getEmail())){
-            throw new RuntimeException("Email is already in Use");
+            throw new EmailAlreadyUsedException("Email is already in Use");
         }
 
         User user = new User();
