@@ -29,7 +29,7 @@ public class AdminStudent {
 
     @NotBlank(message = "Institute ID is required")
     @Column(nullable = false, name = "institute_id")
-    private String instituteID;
+    private String instituteId;
 
     @NotBlank(message = "Branch name is required")
     @Column(nullable = false)

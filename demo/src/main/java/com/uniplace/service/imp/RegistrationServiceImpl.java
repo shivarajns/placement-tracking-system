@@ -33,7 +33,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     @Transactional
     public void registerStudent(RegisterRequest request) {
-        AdminStudent adminStudent = AdminStudentRepository.findByEmailAndUsnAndInstituteId(
+        AdminStudent adminStudent = adminStudentRepository.findByEmailAndUsnAndInstituteId(
                 request.getEmail(),
                 request.getUsn(),
                 request.getInstituteId()
