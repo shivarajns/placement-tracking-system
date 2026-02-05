@@ -1,0 +1,79 @@
+.login-page{
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logo{
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.login-cnt{
+    width: 280px;
+    min-height: 300px;
+    background-color: rgb(4, 29, 72);
+    margin-top: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    color: white;
+}
+
+.InputBoxes{
+    width: 85%;
+    height: 30px;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 20px;
+    padding: 0px 10px;
+}
+
+
+
+label {
+    color: #ffffff;
+}
+
+select {
+    width: 45%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+option{
+    background-color: rgb(4, 32, 86);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+
+@media (max-width: 480px) {
+    select {
+        font-size: 15px;
+        padding: 9px;
+    }
+}
