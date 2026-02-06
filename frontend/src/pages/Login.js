@@ -8,10 +8,16 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
+    const [errorMess, setErrorMess] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleLogin = async ()=> {
 
         try{
+
+            setLoading(true);
+            setErrorMess("");
+
             const response = await axios.post(
                 "http://localhost:8080/api/auth/login",
                 {
@@ -20,11 +26,21 @@ function Login() {
                 }
             )
 
-            console.log(response.data)
+            setErrorMess(response.data.message)
+            alert(response.data.message);
         }
 
         catch (err){
             console.error(err);
+
+            if(err.request.status === 401){
+                setErrorMess("Invalid Email or Password")
+            }
+
+            alert(errorMess)
+        }
+        finally{
+            setLoading(false);
         }
     }
     

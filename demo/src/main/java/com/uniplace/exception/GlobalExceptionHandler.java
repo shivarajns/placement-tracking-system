@@ -42,4 +42,9 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(ex.getMessage());
     }
+
+    @ExceptionHandler(StudentProfileNotAvailableException.class)
+    public ResponseEntity<String> handleStudentProfileNotAvailable(Exception ex){
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(ex.getMessage());
+    }
 }
