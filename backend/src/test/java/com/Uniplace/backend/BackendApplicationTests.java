@@ -1,10 +1,10 @@
-package com.uniplace;
+package com.Uniplace.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UniplaceApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {

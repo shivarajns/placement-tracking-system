@@ -1,13 +1,13 @@
-package com.uniplace;
+package com.Uniplace.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UniplaceApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UniplaceApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }
