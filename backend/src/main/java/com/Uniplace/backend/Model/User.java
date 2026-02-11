@@ -1,9 +1,9 @@
 package com.Uniplace.backend.Model;
 
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,12 +21,16 @@ public class User {
 
     @NotBlank(message = "Email is required")
     @Column(nullable = false, unique = true)
-    @Email(message = "Enter Valid Email")
+    @Email(message = "Enter valid Email")
     private String email;
+
+    @NotBlank(message = "Name is required")
+    @Column(nullable = false)
+    private String name;
 
     @NotBlank(message = "Password is required")
     @Column(nullable = false)
-    @Size(min = 5, max = 20)
     private String password;
 
+    private String role;
 }
