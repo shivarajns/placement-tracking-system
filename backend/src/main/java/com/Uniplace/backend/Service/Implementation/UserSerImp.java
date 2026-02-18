@@ -2,6 +2,7 @@ package com.Uniplace.backend.Service.Implementation;
 
 
 import com.Uniplace.backend.DTO.UserDto;
+import com.Uniplace.backend.Entity.Role;
 import com.Uniplace.backend.Exceptions.UserAlreadyRegisteredException;
 import com.Uniplace.backend.Model.User;
 import com.Uniplace.backend.Repository.UserRepo;
@@ -31,10 +32,10 @@ public class UserSerImp implements UserService {
         user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
         user.setPassword(PasswordEncoder.encode(userDto.getPassword()));
-        user.setRole("STUDENT");
+        user.setRole(Role.valueOf(userDto.getRole().toUpperCase()));
 
         User saveUSer = userRepo.save(user);
 
-        return new UserDto(saveUSer.getName(), saveUSer.getEmail(), saveUSer.getPassword(), saveUSer.getRole());
+        return new UserDto(saveUSer.getName(), saveUSer.getEmail(), saveUSer.getPassword(), saveUSer.getRole().name());
     }
 }

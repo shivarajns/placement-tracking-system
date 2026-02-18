@@ -1,6 +1,7 @@
 package com.Uniplace.backend.Model;
 
 
+import com.Uniplace.backend.Entity.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -32,5 +33,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
