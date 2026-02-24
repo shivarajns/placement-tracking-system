@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import{ useState } from "react";
 import "../style/pages/Login.css"
 import Logo from "../components/common/Logo";
 import Button from "../components/common/button";
@@ -15,14 +15,16 @@ function Login() {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        alert(message)
-    }, [message])
+    // useEffect(() => {
+    //     alert(message)
+    // }, [message])
 
     const HandleLogin = async () => {
         try {
             const data = await LoginUser(email, password)
             setMessage(data.message)
+            console.log("Login Success")
+            console.log(message)
 
             if (data.role === "ADMIN") {
                 navigate("/ADMIN")
