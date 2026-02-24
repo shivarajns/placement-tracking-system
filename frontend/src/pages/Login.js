@@ -1,19 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import "../style/pages/Login.css"
 import Logo from "../components/common/Logo";
 import Button from "../components/common/button";
-import axios from "axios"
+// import axios from "axios"
+import { LoginUser } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
-    const [errorMess, setErrorMess] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+    // const [loading, setLoading] = useState(false);
 
-    
-    
-    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        alert(message)
+    }, [message])
+
+    const HandleLogin = async () => {
+        try {
+            const data = await LoginUser(email, password)
+            setMessage(data.message)
+
+            if (data.role === "ADMIN") {
+                navigate("/ADMIN")
+            }
+            else{
+                navigate("/dashboard")
+            }
+        }
+        catch (error){
+            alert("login failed")
+            console.log(error);
+        }
+
+        
+
+    }
+
+
+
+
 
     return (
         <div className="login-page">
@@ -25,13 +54,13 @@ function Login() {
                 <p style={{ "marginTop": "5px" }}>User Email</p>
 
                 <input type="email" id="UserLoginEmail" className="InputBoxes" placeholder="Example@gmail.com" required
-                    onChange={(e)=>{setEmail(e.target.value)}}
+                    onChange={(e) => { setEmail(e.target.value) }}
                 ></input>
 
                 <p style={{ "marginTop": "5px" }}>Password</p>
 
                 <input type="password" id="UserLoginPass" className="InputBoxes" placeholder="Enter your Password" required
-                    onChange={(e)=>{setPass(e.target.value)}}
+                    onChange={(e) => { setPass(e.target.value) }}
                 ></input>
 
                 {/* <label for="role" style={{ "marginTop": "5px" }}>Select Role</label>
@@ -41,7 +70,7 @@ function Login() {
                     <option value="RECRUITER">Recruiter</option>
                     <option value="ADMIN">Admin</option>
                 </select> */}
-                <Button content="Login"></Button>
+                <Button content="Login" onClick={HandleLogin}></Button>
             </div>
         </div>
     )
