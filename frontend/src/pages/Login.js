@@ -11,38 +11,8 @@ function Login() {
     const [errorMess, setErrorMess] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const handleLogin = async ()=> {
-
-        try{
-
-            setLoading(true);
-            setErrorMess("");
-
-            const response = await axios.post(
-                "http://localhost:8080/api/auth/login",
-                {
-                    email,
-                    password
-                }
-            )
-
-            setErrorMess(response.data.message)
-            alert(response.data.message);
-        }
-
-        catch (err){
-            console.error(err);
-
-            if(err.request.status === 401){
-                setErrorMess("Invalid Email or Password")
-            }
-
-            alert(errorMess)
-        }
-        finally{
-            setLoading(false);
-        }
-    }
+    
+    
     
 
     return (
@@ -64,14 +34,14 @@ function Login() {
                     onChange={(e)=>{setPass(e.target.value)}}
                 ></input>
 
-                <label for="role" style={{ "marginTop": "5px" }}>Select Role</label>
+                {/* <label for="role" style={{ "marginTop": "5px" }}>Select Role</label>
                 <select id="role" name="role" required> 
                     <option value="" disabled selected>role</option>
                     <option value="STUDENT">Student</option>
                     <option value="RECRUITER">Recruiter</option>
                     <option value="ADMIN">Admin</option>
-                </select>
-                <Button content="Login" onClick={handleLogin}></Button>
+                </select> */}
+                <Button content="Login"></Button>
             </div>
         </div>
     )
