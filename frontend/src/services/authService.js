@@ -36,6 +36,36 @@ export const getUserRole = ()=> {
     return localStorage.getItem("role")
 }
 
-export const isAuthenticated = () =>{
-    return !!localStorage("token")
+
+function parsejwt(token){
+    try {
+        return JSON.parse(atob(token.split(".")[1]))
+    } catch (error) {
+        return null
+    }
+}
+
+export function isTokenExpired(token){
+    if (!token) return true;
+
+    const decoded = parsejwt(token)
+    if(!decoded?.exp) return true
+
+    const currentTime = Date.now() / 1000
+    return decoded.exp < currentTime
+}
+
+export function isAuthenticated() {
+    const token = getToken();
+
+    if(!token || isTokenExpired(token)){
+        logoutUser();
+        return false
+    }
+
+    return true
+}
+
+export function saveToken(token) {
+    localStorage.setItem("token", token)
 }
