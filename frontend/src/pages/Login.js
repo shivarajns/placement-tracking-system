@@ -4,6 +4,7 @@ import Logo from "../components/common/Logo";
 import Button from "../components/common/button";
 import { LoginUser, saveToken } from "../services/authService";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
 
@@ -70,7 +71,7 @@ function Login() {
     return (
         <div className="login-page">
 
-            <div className="login-logo">
+            <div className="login-logo" style={{"marginTop":"-20px", "marginBottom":"80px"}}>
                 <Logo />
             </div>
 
@@ -95,11 +96,9 @@ function Login() {
                     onChange={(e) => setPass(e.target.value)}
                 />
 
-                <Button content="Login" onClick={HandleLogin} />
-
-                {message && <p>{message}</p>}
+                <button onClick={HandleLogin}>Login</button>
             </div>
-
+            <Link to="/Register" style={{"color":"blue", "fontSize":"0.8rem"}}> no account? Register</Link>
         </div>
     );
 }
