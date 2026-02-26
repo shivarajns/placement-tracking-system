@@ -3,7 +3,6 @@ package com.Uniplace.backend.Controller;
 import com.Uniplace.backend.DTO.RegisterResponse;
 import com.Uniplace.backend.DTO.UserDto;
 import com.Uniplace.backend.Exceptions.UserAlreadyRegisteredException;
-import com.Uniplace.backend.Service.Implementation.UserSerImp;
 import com.Uniplace.backend.Service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
