@@ -3,7 +3,6 @@ import { logoutUser } from "../services/authService";
 import { Navigate, useNavigate } from "react-router-dom";
 import { GetProfile } from "../services/DashboardService";
 import "../style/pages/Dashboard.css"
-import Line from "../components/common/line"
 
 function Dashboard() {
 
@@ -15,12 +14,7 @@ function Dashboard() {
     }
 
     const [profile, setProfile] = useState("")
-    const [phone, setPhone] = useState();
 
-
-    useEffect(() => {
-        console.log(phone)
-    }, [phone])
 
     useEffect(() => {
 
@@ -28,8 +22,6 @@ function Dashboard() {
             async function LoadProfile() {
                 const data = await GetProfile();
                 setProfile(data)
-                console.log(data)
-                setPhone(data.data.phone)
             }
 
 
