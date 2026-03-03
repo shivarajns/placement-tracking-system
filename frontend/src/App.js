@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Footer from "./components/common/footer";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
-
+import DashboardEdit from "./pages/DashboardEdit"
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="//dashboard" element={<Dashboard/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/editprofile" element={<DashboardEdit/>}/>
       </Routes>
       <Footer/>
     </>
