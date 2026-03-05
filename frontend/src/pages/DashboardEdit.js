@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/pages/DashboardEdit.css"
+import { GetProfile } from "../services/DashboardService";
 
 function DashboardEdit() {
+
+    const[profile, setProfile] = useState();
+
+    useEffect(()=>{
+        console.log(profile);
+    },[profile])
+
+    useEffect( ()=>{
+        try {
+            async function LoadProfile() {
+                const response = await GetProfile();
+                setProfile(response.data);
+            }
+            LoadProfile();
+            
+        } catch (error) {
+            console.error(error);
+        }
+        
+    }, []
+
+    )
 
     return(
         <div className="edit-container">
@@ -17,7 +40,7 @@ function DashboardEdit() {
                             type="text"
                             id="username"
                             className="username"
-                            defaultValue="Shivaraju"
+                            defaultValue={profile?.username}
                             placeholder="Enter your username"
                         />
                     </div>
@@ -28,7 +51,7 @@ function DashboardEdit() {
                             type="text"
                             id="phone"
                             className="phone"
-                            defaultValue="9876543210"
+                            defaultValue={profile?.phone}
                             pattern="[0-9]{10}"
                             placeholder="Enter 10 digit phone number"
                         />
@@ -40,7 +63,7 @@ function DashboardEdit() {
                             type="text"
                             id="location"
                             className="location"
-                            defaultValue="Bangalore"
+                            defaultValue={profile?.location}
                             placeholder="Enter your location"
                         />
                     </div>
@@ -51,7 +74,7 @@ function DashboardEdit() {
                             type="text"
                             id="institute"
                             className="institute"
-                            defaultValue="XYZ Engineering College"
+                            defaultValue={profile?.institute}
                             placeholder="Enter your institute"
                         />
                     </div>
@@ -62,7 +85,7 @@ function DashboardEdit() {
                             type="text"
                             id="course"
                             className="course"
-                            defaultValue="B.E"
+                            defaultValue={profile?.course}
                             placeholder="Enter your course"
                         />
                     </div>
@@ -73,7 +96,7 @@ function DashboardEdit() {
                             type="text"
                             id="branch"
                             className="branch"
-                            defaultValue="Computer Science"
+                            defaultValue={profile?.branch}
                             placeholder="Enter your branch"
                         />
                     </div>
@@ -84,7 +107,7 @@ function DashboardEdit() {
                             type="text"
                             id="domain"
                             className="domain"
-                            defaultValue="Java Backend Development"
+                            defaultValue={profile?.domain}
                             placeholder="Enter your domain"
                         />
                     </div>
@@ -95,7 +118,7 @@ function DashboardEdit() {
                             type="text"
                             id="skills"
                             className="skills"
-                            defaultValue="Java, Spring Boot, MySQL"
+                            defaultValue={profile?.skills}
                             placeholder="Enter skills (comma separated)"
                         />
                     </div>
