@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/register"
+const API_URL = "https://placement-tracking-system.onrender.com/api/auth/register"
 
 export async function RegisterUser(UserData){
     try {

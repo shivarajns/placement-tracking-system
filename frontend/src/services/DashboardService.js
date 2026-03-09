@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./authService";
 
-const API_URL = "http://localhost:8080/api/auth/profile"
+const API_URL = "https://placement-tracking-system.onrender.com/api/auth/profile"
 
 export async function GetProfile() {
 
