@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../style/pages/DashboardEdit.css"
 import { GetProfile } from "../services/DashboardService";
+import { getUpdatedProfile } from "../services/getUpdateProfileService";
+import { UpdateProfile } from "../services/UpdateProfileService";
+
 
 function DashboardEdit() {
 
@@ -26,13 +29,25 @@ function DashboardEdit() {
 
     )
 
+    async function handleSubmit() {
+        const updatedProfile = getUpdatedProfile();
+
+        try {
+            const response = await UpdateProfile(updatedProfile);
+            console.log(response);
+        } catch (error) {
+            throw Error(error)
+        }
+    }
+
+
     return(
         <div className="edit-container">
 
             <div className="edit-card">
                 <h2 className="edit-title">Edit Profile</h2>
 
-                <form className="edit-form">
+                <form className="edit-form" onSubmit={handleSubmit}>
 
                     <div className="form-group">
                         <label htmlFor="username">Username</label>
