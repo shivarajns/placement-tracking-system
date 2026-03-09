@@ -34,7 +34,7 @@ function DashboardEdit() {
 
         try {
             const response = await UpdateProfile(updatedProfile);
-            console.log(response);
+            alert(response?.message)
         } catch (error) {
             throw Error(error)
         }
