@@ -7,6 +7,7 @@ import Footer from "./components/common/footer";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import DashboardEdit from "./pages/DashboardEdit"
+import Recruterregister from "./pages/RecruterRegisterPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="//dashboard" element={<Dashboard/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/editprofile" element={<DashboardEdit/>}/>
+        <Route path="/register/recruterregister" element={<Recruterregister/>}/>
       </Routes>
       <Footer/>
     </>

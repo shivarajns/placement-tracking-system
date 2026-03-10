@@ -1,4 +1,4 @@
-import axios from "axios";
+
 
 const API_URL = "https://placement-tracking-system.onrender.com/api/auth/register"
 

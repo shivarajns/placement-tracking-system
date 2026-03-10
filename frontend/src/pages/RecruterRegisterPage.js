@@ -1,21 +1,18 @@
-import React from "react";
 import { useState } from "react";
 import "../style/pages/Register.css";
 import Logo from "../components/common/Logo";
 import { RegisterUser } from "../services/RegisterService";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-function Register() {
+function RecruiterRegister() {
 
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         password: "",
-        role: "STUDENT"
+        role: "RECRUITER"
     });
 
-    const [message, setMessage] = useState("")
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -26,20 +23,16 @@ function Register() {
     };
 
     async function handleSubmit(e) {
-        e.preventDefault(); 
-        
+        e.preventDefault(); // Prevent form reload
         try {
-            const result = await RegisterUser(formData)
-            setMessage(result.message)
-            alert(result.message)
-            navigate("/login")
-            
+            const response = await RegisterUser(formData);
+            alert(response?.message);
+            console.log("register success");
+            navigate("/login");
         } catch (error) {
-            setMessage(error)
-            alert(message)
-            console.log("Error Message: ", message)
+            console.log("error", error);
         }
-    };
+    }
 
     return (
         <div className="register-page">
@@ -47,11 +40,9 @@ function Register() {
                 <Logo />
             </div>
             <div className="register-card">
-
                 <h2>Create Account</h2>
 
                 <form onSubmit={handleSubmit}>
-
                     <label>Name</label>
                     <input
                         type="text"
@@ -79,16 +70,11 @@ function Register() {
                         onChange={handleChange}
                     />
 
-
-                    <input type="hidden" name="role" value="STUDENT" />
-
-                    <button type="submit">Student Register</button>
-
+                    <button type="submit">Register as Recruiter</button>
                 </form>
-            </div>
-            <Link to="recruterregister" style={{"color": "blue", "fontSize":"0.8rem", "marginTop":"10px"}}>Rectruter Register</Link>
+            </div>        
         </div>
     );
 }
 
-export default Register
+export default RecruiterRegister;
