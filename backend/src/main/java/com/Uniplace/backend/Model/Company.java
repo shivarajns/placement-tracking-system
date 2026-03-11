@@ -1,31 +1,40 @@
 package com.Uniplace.backend.Model;
 
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "company")
 public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int company_id;
+    @Column(name = "company_id")
+    private Long companyId;
 
-    private String company_name;
-    private String company_website;
-    private String company_industry;
-    private String company_location;
-    private String company_bio;
+    @Column(name = "company_name")
+    private String companyName;
+
+    @Column(name = "company_website")
+    private String companyWebsite;
+
+    @Column(name = "company_industry")
+    private String companyIndustry;
+
+    @Column(name = "company_location")
+    private String companyLocation;
+
+    @Column(name = "company_bio")
+    private String companyBio;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
 //    @OneToMany(mappedBy = "company")
 //    private List<Recruiter> recruiters;
 //
 //    @OneToMany(mappedBy = "company")
 //    private List<Job> jobs;
+
 }
