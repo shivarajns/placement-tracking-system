@@ -11,7 +11,7 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "company_id")
-    private Long companyId;
+    private int companyId;
 
     @Column(name = "company_name")
     private String companyName;
@@ -31,10 +31,10 @@ public class Company {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-//    @OneToMany(mappedBy = "company")
-//    private List<Recruiter> recruiters;
-//
-//    @OneToMany(mappedBy = "company")
-//    private List<Job> jobs;
+    @OneToMany(mappedBy = "company")
+    private List<Recruiter> recruiters;
+
+    @OneToMany(mappedBy = "company")
+    private List<Job> jobs;
 
 }
